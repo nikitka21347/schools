@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="SHORTCUT ICON" href="favicon.ico">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="jquery/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+	<title>1курс</title>
+</head>
+<body>
+	<div id="page-preloader"><span class="spinner"></span></div>
+	<script>
+		$(window).on('load', function () {
+			var $preloader = $('#page-preloader'),
+			$spinner = $preloader.find('.spinner');
+			$spinner.fadeOut();
+			$preloader.delay(350).fadeOut('slow');
+		}); 
+	</script>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	   <div class="container">
+	     <div class="navbar-header">
+	       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	       <span class="icon-bar"></span>
+	       <span class="icon-bar"></span>
+	       <span class="icon-bar"></span>
+	       </button>
+	       <a class="navbar-brand"  href="index.php">АВТ</a>
+	     </div>
+
+	<div class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav navbar-right">
+	    <li>
+	    <form action="search.php" method="post" name="form" class="form-search" onsubmit="return false;">
+	  		<input id="search" type="text" name="search" value="" class="input-text" placeholder="Поищем...">
+            <input type="submit" value="Найти" class="input-submit">
+            </form>
+	  	</li>
+	  </ul>
+	  	</div>
+	   </div>
+	 </div>
+    	 <div class="kategoria">
+	 	<p>Категории ></p>
+	 </div>
+    <div class="container">
+        <div class="item-a"></div>    </div>
+<!--	
+
+	  		<input type="text" class="input-text">
+            <input type="submit" value="Нf" class="input-submit">
+-->
+	 <?php 
+	$db = mysql_connect("localhost", "root", "");
+	mysql_select_db("my_site", $db);
+	$errq = mysql_query("SELECT * FROM `1`");
+	  ?>
+    <div class="search" class="navbar">
+	 <div class="text">
+	 	<div class="centered">
+	 		<div id="resSearch"><?php 
+    			if (mysql_num_rows($errq) > 0) {
+
+    				do {
+    					echo "<div>".$sqli['head']."</div>";
+    				} while ($sqli = mysql_fetch_array($errq));
+    			}
+    			 ?></div>
+	 	</div>
+	 </div>
+           <!--		<form action="search.php" class="form-wrapper" method="post" name="form" onsubmit="return false;">
+    			<div class="centered slas">
+    			<input type="text" name="search" value="" id="search" placeholder="Введите слово...">
+   				<input type="submit" id="submit" value="найти" />
+    			</div>
+    		</form> -->
+    <script type="text/javascript">
+    	$(function () {
+    		$("#search").keyup(function () {
+    			var search = $("#search").val();
+    			$.ajax({
+    				type: "POST",
+    				url: "search.php",
+    				data: {"search" : search},
+    				cache: false,
+    				success: function(response) {
+    					$("#resSearch").html(response);
+    				}
+    			});
+    			return false;
+    		});
+    	});
+    </script>
+</form>
+</body>
+</html>

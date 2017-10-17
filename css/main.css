@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?font-family:=Lato|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: #f8f8f8;
+	font-family: "Lato";
+	font-weight: 300;
+	font-size: 16px;
+	color: #333;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-overflow-scrolling: touch;
+
+    margin-top: 70px;
+}
+
+h1, h2, h3, h4,h5, h6 {
+	font-family: "Raleway";
+	font-weight: 300;
+	color: #333;
+}
+
+p {
+	line-height: 28px;
+	margin-bottom: 25px;
+}
+
+.centered {
+	text-align: center;
+}
+a {
+	color: #f85c37;
+}
+
+a:hover, a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+}
+
+#page-preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	z-index: 100500;
+}
+
+#page-preloader .spinner {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -16px 0 0 -16px;
+}
+
+.navbar {
+	font-weight: 800;
+	font-size: 14px;
+	padding-top: 4px;
+	padding-bottom: 5px;
+}
+
+.navbar-default {
+	background-color: #f8f8f8;
+	border-color: #e7e7e7;
+}
+
+.navbar-inverse {
+	background: steelblue;
+    border-color: steelblue;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+	background-color: #ff7878;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #fff; /*999  2d2d2d steelblue f6f6f6*/
+    font-weight: 100;
+	font-family: "Pacifico";
+	font-size: 28px;
+	letter-spacing: 1px;
+}
+
+.blog-title {
+	font-family: 'Lato';
+}
+
+.form-search {
+	width: 220px;
+	height: 28px;
+    margin: 5%;
+	background: steelblue;
+	overflow:hidden;
+}
+/* overflow:hidden; */
+.input-text {
+    width: 74%;
+    height: 28px;
+    padding-left: 15px;
+    display: inline;
+    border: none;
+    border-radius: 50px;
+    background: #fff;
+}
+
+ /*.input-submit {
+    width: 26%;
+    height: 28px;
+    border-radius: 0 11px 11px 0;
+    margin-left: -5px;
+    display: inline;
+    border: none;
+    color: #000;
+    background: steelblue;
+}*/
+
+.search-input {
+margin-left: 15px;
+color: #fff;
+cursor: pointer;
+}
+
+.reds {
+	width: 1000px;
+	height: 100px;
+       background: -webkit-linear-gradient(left, red ,transparent, blue); 
+    background: -o-linear-gradient(right, red ,transparent, blue); 
+    background: -moz-linear-gradient(right, red ,transparent, blue);
+    background: linear-gradient(to right, red ,transparent, blue);
+}
